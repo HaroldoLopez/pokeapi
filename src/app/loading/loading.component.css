@@ -1,0 +1,12 @@
+.loading {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 75px)
+}
+
+.poke {
+    margin-left:-13px;
+}
+

@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'GothamMedium';
+    src: url('../../assets/fonts/GothamMedium.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
+
+.border {
+    border: solid 1px black;
+}
+
+.welcome-wapper {
+    display: flex;
+    margin-left: 90px;
+    margin-top: 77px;
+}
+
+.welcome-icon-back {
+    color: #185A7D;;
+}
+
+.welcome-icon-wapper {
+    display: flex;
+    align-items: center;
+    height: 52px;
+}
+
+.welcome-div {
+    display: flex;
+    flex-flow: column nowrap;
+    color: #185A7D;
+}
+
+.welcome-div > h1 {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 52px;
+    margin: 0px;
+}
+
+.welcome-sub-div {   
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #868686;
+}
+
+.profile-wrapper {
+    display: flex;
+}
+
+.img-profile-wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: #00693C;
+    width: 392px;
+    height: 600px;
+    border-radius: 50px;
+    margin-top: 54px;
+}
+
+.img-profile-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.img-profile-container img {
+    color: #185A7D;
+}
+
+.img-profile-container p {
+    color: white;
+    margin-top: 56px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    line-height: 45px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.img-profile-tumbl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 269px;
+    max-width: 269px;
+    height: 269px;
+    border-radius: 50%;
+    border: solid 14px white;
+    background-color: #E7EFF5;
+    background-image: url('../../assets/unknow_icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top:35px;
+    box-sizing: border-box;
+}
+
+.img-profile-tumbl > img {
+    width: 100px;
+    height: 100px;
+}
+
+.row-profile {
+    display: flex;
+}
+
+.col-caract {
+    width: 157px;
+    height: 36px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+
+    color: #4B4B4B;
+}
+
+.data-profile {
+    margin-top: 45px;
+}
+
+.col-response {
+    width: 157px;
+    height: 36px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+
+    color: #4B4B4B;
+
+    text-align: right;
+}
+
+
+.poke-selection {
+    flex-grow: 2;
+}
+
+.poke-selection-wrapper {
+    width: 530.32px;
+    margin-left: 264px;
+}
+
+.poke-search {
+    display: flex;
+    align-items: center;
+    border: 1px #F2F2F2 solid;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+}
+
+.poke-search > object {
+    margin-left: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  
+}
+
+.poke-input{
+    width: 100%;
+    outline: none;
+    background-color: #F2F2F2;
+    border: none;
+    font-family: 'GothamMedium';
+    font-weight: 800;
+    font-size: 16px;
+}
+
+#titulo{
+    font-size: 30px;
+    font-family: 'Poppins';
+    color: #185A7D;
+    font-weight: 400;
+    margin-bottom: 30px
+}
+
+#subtitulo{
+    font-size: 18px;
+    font-family: 'Poppins';
+    color: #868686;
+    margin-bottom: 40px;
+}
+.poke-cuadros {
+    display: flex;
+    width: 530.32px;
+    height: 428.74; 
+    flex-flow: row wrap;
+    gap: 8px 17px;
+    margin-top: 30px;
+}
+
+.poke-datos {
+    height:137.58px;
+    width: 163.44px;
+}
+
+.poke-datos-event {
+    position: absolute;
+    background-color: transparent;
+    width: 163px;
+    height: 138px;
+    z-index: 1;
+}
+
+.poke-datos-bg{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 106.35px;
+    width: 163.44px;
+    border: 1px #F2F2F2 solid;
+    border-radius: 20px;
+    background-color: #F2F2F2;
+    margin-top: 31.23px;
+    z-index: 0;
+
+}
+
+.poke-datos-bg > img{
+    margin-top: -31.23px;
+    height: 83.56px;
+    width: 76.64px;
+    z-index: 0;
+}
+
+.poke-datos-blue{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 25.32px;
+    width: 135.74px;
+    border: 1px solid #185A7D;
+    background-color: #185A7D;
+    border-radius: 10px;
+    margin-top: 16.88px;
+
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.1), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0718854), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0596107), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.05), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0403893), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0281146);
+}
+
+.poke-datos-info{
+    font-family: 'Poppins' ;
+    font-size: 12px;
+    font-weight: 900;
+    color: white;
+    margin-left: 15px;
+}
+
+.btn-save-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-controls {
+    width: 222px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    border: none;
+    margin-top: 52.25px;
+}
+
+.btn-disable {
+    background-color: #E6E6E6;
+    color: #868686;
+}
+
+.poke-active {
+    background-color: #FFC600;
+}

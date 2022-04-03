@@ -1,0 +1,68 @@
+<div class="welcome-wapper">
+    <div class="welcome-icon-wapper">
+        <mat-icon class="welcome-icon-back">arrow_back_ios</mat-icon>
+    </div>
+    <div class="welcome-div">
+        <h1>¡Ya casi terminamos!</h1>
+        <div class="welcome-sub-div">
+            <p>Revisa la información, y completa lo solicitado.</p>
+        </div>
+
+        <div class="profile-wrapper">
+            <div class="img-profile-wrapper">
+                <div class="img-profile-container">
+                    <p>nombre</p>
+                    <div class="img-profile-tumbl"></div>
+                    <div class="data-profile">
+                        <div class="row-profile">
+                            <div class="col-caract">Pasatiempo:</div>
+                            <div class="col-response">Ver Series</div>
+                        </div>
+                        <div class="row-profile">
+                            <div class="col-caract">Edad:</div>
+                            <div class="col-response">18 años</div>
+                        </div>
+                        <div class="row-profile">
+                            <div class="col-caract">DUI:</div>
+                            <div class="col-response">05643215-9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="poke-selection">
+        <div class="poke-selection-wrapper">
+            <p id="titulo">Pokémon</p>
+            <p id="subtitulo">Selecciona 3 Pokémon para que sean parte de tu equipo</p>
+
+            <div class="poke-search">
+                <object data="./assets/search.svg" type=""></object>
+                <input class="poke-input" type="text" placeholder="Buscar por índice, nombre...">
+            </div>
+
+            <div class="poke-cuadros">
+                <div *ngFor="let poke of pokemonsRepo" (click)="addPoke($event, poke.number)" class="poke-datos">
+                    <div class="poke-datos-event"></div>
+                    <div class="poke-datos-bg">
+                        <img src="./assets/bullbasour.png" alt="">
+                        <div class="poke-datos-blue">
+                            <div class="poke-datos-info">{{poke.number}}</div>
+                            <div class="poke-datos-info">{{poke.name}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-save-wrapper">
+                <button class="button-controls btn-disable">Guardar</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

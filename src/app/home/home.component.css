@@ -1,0 +1,245 @@
+
+.border {
+    border: solid 1px black;
+}
+
+.welcome-wapper {
+    display: flex;
+    margin-left: 173px;
+    margin-top: 77px;
+}
+
+.welcome-icon-back {
+    color: #185A7D;;
+}
+
+.welcome-icon-wapper {
+    display: flex;
+    align-items: center;
+    height: 52px;
+}
+
+.welcome-div {
+    display: flex;
+    flex-flow: column nowrap;
+    color: #185A7D;
+}
+
+.welcome-div > h1 {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 52px;
+    margin: 0px;
+}
+
+.welcome-sub-div {   
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #868686;
+}
+
+.welcome-edit-profile {
+    display: flex;
+    align-items: center;
+}
+
+.welcome-edit-profile h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    margin-bottom: 0px;
+    color: black;
+}
+
+.welcome-edit-profile div {
+    flex-grow: 2;
+    text-align: right;
+}
+
+.btn-edit {
+    background-color: white;
+    color: #01426A;
+    border: solid 1px #01426A;
+    border-radius: 10px;
+    width: 134px;
+    height: 30px;
+}
+
+.profile-wrapper {
+    display: flex;
+}
+
+.img-profile-wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: #00693C;
+    width: 392px;
+    height: 600px;
+    border-radius: 50px;
+    margin-top: 57px;
+}
+
+.img-profile-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.title-profile {
+    display: flex;
+    margin-top: 56px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.title-profile > p {
+    width: 50%;
+}
+
+.title-profile > div {
+    width: 50%;
+    text-align: right;
+}
+
+.img-profile-container img {
+    color: #185A7D;
+}
+
+.img-profile-container p {
+    color: white;
+    font-size: 30px;
+    line-height: 45px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.img-profile-tumbl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 269px;
+    max-width: 269px;
+    height: 269px;
+    border-radius: 50%;
+    border: solid 14px white;
+    background-color: #E7EFF5;
+    background-image: url('../../assets/unknow_icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top:35px;
+    box-sizing: border-box;
+}
+
+.img-profile-tumbl > img {
+    width: 100px;
+    height: 100px;
+}
+
+.row-profile {
+    display: flex;
+}
+
+.col-caract {
+    width: 157px;
+    height: 36px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+
+    color:white;
+}
+
+.data-profile {
+    margin-top: 45px;
+}
+
+.col-response {
+    width: 157px;
+    height: 36px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+
+    color: white;
+
+    text-align: right;
+}
+
+
+.team-info-wrapper {
+    flex-grow: 2;
+}
+
+.team-info-container {
+    height: 748px;
+    margin-right: 70px;
+    margin-left: 205px;
+}
+
+.team-info-title {
+    display: flex;
+    width: 100%;
+    margin-top: 65px;
+}
+
+.team-info-title p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 48px;
+    color: #01426A;
+}
+
+.team-info-title div{
+    display: flex;
+    justify-content: end;
+    flex-grow: 2;
+}
+
+.team-data-container {
+    display: flex;
+}
+
+.team-data {
+    display: flex;
+    width: 100%;
+    height: 337px;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+}
+
+
+.poke-info {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 36px;
+    margin-top: 23px;
+    margin-right: 54.19px;
+}
+
+.poke-info img {
+    width: 153px;
+    height: 186px;
+}
+
+.poke-info p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    margin: 0px;
+}
+
+.poke-data table {
+    flex-grow: 2;
+}

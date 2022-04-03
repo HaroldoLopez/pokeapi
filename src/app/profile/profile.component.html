@@ -1,0 +1,83 @@
+<div *ngIf="loadingState; else loading">
+    <div class="welcome-wapper">
+        <div class="welcome-icon-wapper">
+            <mat-icon class="welcome-icon-back">arrow_back_ios</mat-icon>
+        </div>
+        <div class="welcome-div">
+            <h1>¡Hola! Configuremos tu perfil</h1>
+            <div class="welcome-sub-div">
+                <p>Queremos conocerte mejor.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-wrapper">
+        <div class="img-profile-wrapper">
+            <div class="img-profile-container">
+                <p>Imágen perfil</p>
+                <div class="img-profile-tumbl"></div>
+                <div class="img-profile-load">
+                    <span>Adjunta un foto</span>
+                    <object class="load-icon" data="./assets/cloud_upload_24px.svg" width="24" height="24"></object>
+                </div>
+            </div>
+        </div>
+        <div class="form-info-wrapper">
+            <div class="form-info-content">
+                <h2>Tu información</h2>
+                <p>Completa la siguiente información<br>para completar tu perfil</p>
+            </div>
+            <div class="form-controls-wrapper">
+                <mat-form-field class="form-controls" appearance="outline">
+                    <mat-label>Nombre*</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <div class="hobby-wrapper">
+                    <mat-form-field class="form-controls" (focusout)="focusOutHobby()" (click)="editHobbies()" id="form-controls-hobby" appearance="outline">
+                        <mat-label>Pasatiempo favorito</mat-label>
+                        <mat-chip-list #chipList aria-label="Fruit selection">
+                            <mat-chip
+                                *ngFor="let hobby of hobbies"
+                                (removed)="remove(hobby)">
+                                {{hobby}}
+                                <button matChipRemove>
+                                    <mat-icon>cancel</mat-icon>
+                                </button>
+                                </mat-chip>
+                                <input
+                                #hobbyInput
+                                (keyup)="searchItems($event)"
+                                (click)="searchItems()"
+                                [matChipInputFor]="chipList"
+                                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                (matChipInputTokenEnd)="add($event)">
+                        </mat-chip-list>
+                    </mat-form-field>
+                    <div [ngClass]="hobbyMenuState ? 'menu-selection active' : 'menu-selection inactive'">
+                        <ul>
+
+                            <li *ngFor="let h of hobbiesOptions" (click)="selectItemList(h.option)" class="menu-selection-opt">{{ h.value }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <mat-form-field class="form-controls" appearance="outline">
+                    <mat-label>Cumpleaños*</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker ></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="form-controls" appearance="outline">
+                    <mat-label>Documento*</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <button class="button-controls" mat-raised-button disabled>Continuar</button>
+            </div>        
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>
+
