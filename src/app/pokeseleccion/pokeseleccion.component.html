@@ -1,3 +1,4 @@
+
 <div class="welcome-wapper">
     <div class="welcome-icon-wapper">
         <mat-icon class="welcome-icon-back">arrow_back_ios</mat-icon>
@@ -16,15 +17,15 @@
                     <div class="data-profile">
                         <div class="row-profile">
                             <div class="col-caract">Pasatiempo:</div>
-                            <div class="col-response">Ver Series</div>
+                            <div class="col-response">{{pasatiempo}}</div>
                         </div>
                         <div class="row-profile">
                             <div class="col-caract">Edad:</div>
-                            <div class="col-response">18 años</div>
+                            <div class="col-response">{{edad}}</div>
                         </div>
                         <div class="row-profile">
                             <div class="col-caract">DUI:</div>
-                            <div class="col-response">05643215-9</div>
+                            <div class="col-response">{{documento}}</div>
                         </div>
                     </div>
                 </div>
@@ -41,16 +42,16 @@
 
             <div class="poke-search">
                 <object data="./assets/search.svg" type=""></object>
-                <input class="poke-input" type="text" placeholder="Buscar por índice, nombre...">
+                <input class="poke-input" (keyup.enter)="search($event)" type="text" placeholder="Buscar por índice, nombre...">
             </div>
 
             <div class="poke-cuadros">
-                <div *ngFor="let poke of pokemonsRepo" (click)="addPoke($event, poke.number)" class="poke-datos">
+                <div *ngFor="let poke of pokemonsRepo" (click)="addPoke($event, poke.id)" class="poke-datos">
                     <div class="poke-datos-event"></div>
                     <div class="poke-datos-bg">
-                        <img src="./assets/bullbasour.png" alt="">
+                        <img src="{{poke.characteristics.image}}" alt="">
                         <div class="poke-datos-blue">
-                            <div class="poke-datos-info">{{poke.number}}</div>
+                            <div class="poke-datos-info">{{poke.id}}</div>
                             <div class="poke-datos-info">{{poke.name}}</div>
                         </div>
                     </div>
@@ -58,7 +59,7 @@
             </div>
 
             <div class="btn-save-wrapper">
-                <button class="button-controls btn-disable">Guardar</button>
+                <button (click)="save()" [ngClass]="enableSave ? 'button-controls btn-disable':'button-controls btn-enable'">Guardar</button>
             </div>
 
         </div>

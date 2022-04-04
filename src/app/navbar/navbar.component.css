@@ -1,0 +1,46 @@
+
+
+.logo-img {
+    position: relative;
+    width: 138px;
+    height: 51px;
+    left: 41px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    padding: 0px;
+    background-color: white;
+    box-shadow: 0px 12px 12px -6px #F6FAFA;
+}
+
+.btn-edit {
+    background-color: white;
+    color: #01426A;
+    border: solid 1px #01426A;
+    border-radius: 10px;
+    width: 160px;
+    height: 36px;
+}
+
+.toolbar-user{
+    display: flex;
+    justify-content: end;
+    flex-grow: 2;
+    gap:55px
+}
+
+.toolbar-user > object{
+    margin-right: 25px;
+}
+
+.btn-edit > b{
+    font-family:'Poppins';
+    font-size: 14px;
+    margin-right: 20px;
+    font-weight: 600;
+}

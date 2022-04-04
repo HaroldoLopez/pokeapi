@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -20,6 +20,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { LoadingComponent } from './loading/loading.component';
 import { PokeseleccionComponent } from './pokeseleccion/pokeseleccion.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RegistroComponent } from './registro/registro.component';
+import { ProcessComponent } from './process/process.component';
 
 
 @NgModule({
@@ -29,9 +33,13 @@ import { HomeComponent } from './home/home.component';
     LoadingComponent,
     PokeseleccionComponent,
     HomeComponent,
+    NavbarComponent,
+    RegistroComponent,
+    ProcessComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatIconModule,
     BrowserAnimationsModule,
@@ -42,7 +50,8 @@ import { HomeComponent } from './home/home.component';
     MatDatepickerModule, 
     MatInputModule,
     MatNativeDateModule,
-    MatChipsModule
+    MatChipsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

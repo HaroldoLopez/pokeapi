@@ -12,12 +12,13 @@
     </div>
 
     <div class="profile-wrapper">
-        <div class="img-profile-wrapper">
+        <div class="img-profile-wrapper" (click)="addImage()">
             <div class="img-profile-container">
                 <p>Imágen perfil</p>
                 <div class="img-profile-tumbl"></div>
                 <div class="img-profile-load">
                     <span>Adjunta un foto</span>
+                    <input #imageInput (change)="onFileSelected($event)" class="input-file" type="file" name="" id="">
                     <object class="load-icon" data="./assets/cloud_upload_24px.svg" width="24" height="24"></object>
                 </div>
             </div>
@@ -27,10 +28,11 @@
                 <h2>Tu información</h2>
                 <p>Completa la siguiente información<br>para completar tu perfil</p>
             </div>
-            <div class="form-controls-wrapper">
+            <form [formGroup]="infoForm" (ngSubmit)="onSubmit()" class="form-controls-wrapper">
                 <mat-form-field class="form-controls" appearance="outline">
                     <mat-label>Nombre*</mat-label>
-                    <input matInput>
+                    <!-- [class.error] = "infoForm.get('personName').valid" -->
+                    <input matInput  formControlName="personName" name="personName">
                 </mat-form-field>
                 <div class="hobby-wrapper">
                     <mat-form-field class="form-controls" (focusout)="focusOutHobby()" (click)="editHobbies()" id="form-controls-hobby" appearance="outline">
@@ -55,24 +57,23 @@
                     </mat-form-field>
                     <div [ngClass]="hobbyMenuState ? 'menu-selection active' : 'menu-selection inactive'">
                         <ul>
-
                             <li *ngFor="let h of hobbiesOptions" (click)="selectItemList(h.option)" class="menu-selection-opt">{{ h.value }}</li>
                         </ul>
                     </div>
                 </div>
                 <mat-form-field class="form-controls" appearance="outline">
                     <mat-label>Cumpleaños*</mat-label>
-                    <input matInput [matDatepicker]="picker">
+                    <input matInput formControlName="birthday" [matDatepicker]="picker">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker ></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field class="form-controls" appearance="outline">
                     <mat-label>Documento*</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="documentIdent">
                 </mat-form-field>
 
-                <button class="button-controls" mat-raised-button disabled>Continuar</button>
-            </div>        
+                <button type="submit" class="button-controls" mat-raised-button [disabled]="!infoForm.valid">Continuar</button>
+            </form>
         </div>
     </div>
 </div>

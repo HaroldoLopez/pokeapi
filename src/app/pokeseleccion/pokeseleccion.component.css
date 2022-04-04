@@ -112,7 +112,7 @@
     font-size: 24px;
     line-height: 36px;
 
-    color: #4B4B4B;
+    color: white;
 }
 
 .data-profile {
@@ -129,7 +129,7 @@
     font-size: 24px;
     line-height: 36px;
 
-    color: #4B4B4B;
+    color: white;
 
     text-align: right;
 }
@@ -270,6 +270,11 @@
 .btn-disable {
     background-color: #E6E6E6;
     color: #868686;
+}
+
+.btn-disable {
+    background-color: green;
+    color: white;
 }
 
 .poke-active {

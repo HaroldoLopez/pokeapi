@@ -1,6 +1,9 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatChipInputEvent} from '@angular/material/chips';
+import { CommunicationService } from '../services/communication/communication.service';
+import { DataInfo } from './dataInfo.model';
 
 @Component({
   selector: 'app-profile',
@@ -18,20 +21,46 @@ export class ProfileComponent implements OnInit {
     { 'value': 'pared 6', 'option': 'opcion 6'},
   ]
 
+  infoForm: FormGroup;
+
   hobbiesOptions : any = []
 
   separatorKeysCodes: number[] = [ENTER, COMMA];
   hobbies: any[] = [];
   hobbyMenuState: boolean = false
   isInMenu: boolean = false
-
+  profileImg:String = ""
   loadingState: boolean = true
 
+  @Output() changeViewEvent = new EventEmitter<String>();
+  @Output() sendDataEvent = new EventEmitter<DataInfo>();
+
   @ViewChild('hobbyInput') hobbyInput: ElementRef = {} as ElementRef;
+  @ViewChild('imageInput') imageInput: ElementRef = {} as ElementRef;
 
-  constructor() { }
+  constructor(fb: FormBuilder, private messageService: CommunicationService) {
+    this.infoForm = fb.group({
+      'personName': ['',
+      Validators.compose([Validators.required])],
+      'birthday': ['',
+      Validators.compose([Validators.required])],
+      'documentIdent': ['',
+      Validators.compose([Validators.required])]
+    })
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  onSubmit() {
+    console.log(this.hobbies);
+    console.log(this.infoForm.value);
+
+    this.sendDataEvent.emit(new DataInfo(this.infoForm,this.hobbies))
+    this.changeViewEvent.emit('team');
+
+    this.messageService.sendMessage("estes un mensaje de prueba")
+
+  }
 
 
   add(event: MatChipInputEvent): void {
@@ -82,6 +111,23 @@ export class ProfileComponent implements OnInit {
   focusOutHobby() {
     if(!this.hobbyMenuState) {
       this.hobbyMenuState = false
+    }
+  }
+
+  addImage() {
+    this.imageInput.nativeElement.click()
+  }
+
+  onFileSelected(event:any) {
+    const file:File = event.target.files[0];
+    if (file) {
+      this.profileImg = file.name;
+
+      const formData = new FormData();
+      formData.append("profileImg", file);
+
+      console.log(file);
+
     }
   }
 

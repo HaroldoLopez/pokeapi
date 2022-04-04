@@ -1,0 +1,12 @@
+<mat-toolbar class="toolbar mat-elevation-z3" role="heading">
+    <img class="logo-img" src="./assets/pokelogo.png" alt="">
+    
+    <div class="toolbar-user" *ngIf="userAvailable">
+        <button class="btn-edit">
+            <b>{{ user }}</b>
+            <object class="user-search" data="./assets/chevron_down_24px.svg" type=""></object>
+        </button>
+        <object data="./assets/search_24px.svg" type="">
+        </object>
+    </div>
+</mat-toolbar>

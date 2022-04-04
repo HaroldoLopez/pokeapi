@@ -2,6 +2,10 @@
     border: solid 1px black;
 }
 
+.error {
+    color: red !important;
+}
+
 .welcome-wapper {
     display: flex;
     margin-left: 90px;
@@ -105,6 +109,10 @@
     border: #9BB8D3 1px solid;
     margin-top: 51px;
     margin-bottom: 74px;
+}
+
+.input-file {
+    display: none;
 }
 
 .img-profile-load > span {

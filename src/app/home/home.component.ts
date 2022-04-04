@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CommunicationService } from '../services/communication/communication.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  @Input() user:String = ""
+
+  constructor(private messageService:CommunicationService) { 
+  }
 
   ngOnInit(): void {
+    this.messageService.sendMessage(this.user)
   }
 
 }

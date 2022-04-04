@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<div [ngSwitch]="appState">
+    <app-registro *ngSwitchCase="'register'"></app-registro>
+    <app-pokeseleccion 
+        [pasatiempo]="pasatiempo"
+        [edad]="edad"
+        [documento]="documento"
+        (changeViewEvent)="changeViewEvent($event)"
+        (sendDataEvent)="getDataTeam($event)"
+        *ngSwitchCase="'team'"
+    ></app-pokeseleccion>
+    <app-profile 
+        *ngSwitchCase="'profile'"
+        (changeViewEvent)="changeViewEvent($event)"
+        (sendDataEvent)="getDataEvent($event)"
+    ></app-profile>
+    <app-home 
+        *ngSwitchCase="'home'"
+        [user]="user"
+    ></app-home>
+
+</div>
+
