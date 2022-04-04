@@ -9,21 +9,18 @@ import { CommunicationService } from '../services/communication/communication.se
 export class NavbarComponent implements OnInit {
 
   user: String = "";
-  userAvailable:Boolean = true
-
-  userAvaible:Boolean=false
+  userAvailable:Boolean = false
 
   constructor(private messageService:CommunicationService) {
     
   }
 
   ngOnInit(): void { 
-    const context = this
     this.messageService.getMessage().subscribe(data => {
-      context.user = data
-      context.userAvaible = true
+      this.user = data
+      this.userAvailable = true
       console.log("usuario message");
-      console.log(context.user);
+      console.log(this.user);
     })
   }
 

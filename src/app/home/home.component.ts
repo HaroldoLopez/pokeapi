@@ -9,6 +9,9 @@ import { CommunicationService } from '../services/communication/communication.se
 export class HomeComponent implements OnInit {
 
   @Input() user:String = ""
+  @Input() pasatiempo:String = ""
+  @Input() edad:String = ""
+  @Input() documento:String = ""
 
   constructor(private messageService:CommunicationService) { 
   }

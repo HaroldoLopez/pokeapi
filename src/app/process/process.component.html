@@ -3,12 +3,12 @@
 <div [ngSwitch]="appState">
     <app-registro *ngSwitchCase="'register'"></app-registro>
     <app-pokeseleccion 
+        *ngSwitchCase="'team'"
         [pasatiempo]="pasatiempo"
         [edad]="edad"
         [documento]="documento"
         (changeViewEvent)="changeViewEvent($event)"
         (sendDataEvent)="getDataTeam($event)"
-        *ngSwitchCase="'team'"
     ></app-pokeseleccion>
     <app-profile 
         *ngSwitchCase="'profile'"
@@ -17,6 +17,9 @@
     ></app-profile>
     <app-home 
         *ngSwitchCase="'home'"
+        [pasatiempo]="pasatiempo"
+        [edad]="edad"
+        [documento]="documento"
         [user]="user"
     ></app-home>
 

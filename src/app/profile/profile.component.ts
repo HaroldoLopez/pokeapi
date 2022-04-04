@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
   @ViewChild('hobbyInput') hobbyInput: ElementRef = {} as ElementRef;
   @ViewChild('imageInput') imageInput: ElementRef = {} as ElementRef;
 
-  constructor(fb: FormBuilder, private messageService: CommunicationService) {
+  constructor(fb: FormBuilder) {
     this.infoForm = fb.group({
       'personName': ['',
       Validators.compose([Validators.required])],
@@ -55,11 +55,12 @@ export class ProfileComponent implements OnInit {
     console.log(this.hobbies);
     console.log(this.infoForm.value);
 
+    const years =  new Date().getFullYear() - new Date(this.infoForm.get("birthday")?.value).getFullYear();
+
+    this.infoForm.patchValue({'birthday':years})
+
     this.sendDataEvent.emit(new DataInfo(this.infoForm,this.hobbies))
     this.changeViewEvent.emit('team');
-
-    this.messageService.sendMessage("estes un mensaje de prueba")
-
   }
 
 

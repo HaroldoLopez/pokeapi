@@ -2,7 +2,7 @@
 <div class="welcome-wrapper">
     <div class="welcome-div">
         <div class="welcome-edit-profile">
-            <h1>¡Hola José!</h1>
+            <h1>¡Hola {{user}}!</h1>
             <div>
                 <button class="btn-edit">
                     <object data="./assets/edit_24px.svg" type=""></object>
@@ -22,15 +22,15 @@
                     <div class="data-profile">
                         <div class="row-profile">
                             <div class="col-caract">Pasatiempo:</div>
-                            <div class="col-response">Ver Series</div>
+                            <div class="col-response">{{pasatiempo}}</div>
                         </div>
                         <div class="row-profile">
                             <div class="col-caract">Edad:</div>
-                            <div class="col-response">18 años</div>
+                            <div class="col-response">{{edad}}</div>
                         </div>
                         <div class="row-profile">
                             <div class="col-caract">DUI:</div>
-                            <div class="col-response">05643215-9</div>
+                            <div class="col-response">{{documento}}</div>
                         </div>
                     </div>
                 </div>
