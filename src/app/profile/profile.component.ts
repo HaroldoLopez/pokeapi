@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
   hobbyMenuState: boolean = false
   isInMenu: boolean = false
 
-  loadingState: boolean = false
+  loadingState: boolean = true
 
   @ViewChild('hobbyInput') hobbyInput: ElementRef = {} as ElementRef;
 

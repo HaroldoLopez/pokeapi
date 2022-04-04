@@ -3,9 +3,9 @@
     border: solid 1px black;
 }
 
-.welcome-wapper {
+.welcome-wrapper {
     display: flex;
-    margin-left: 173px;
+    margin-left: 120px;
     margin-top: 77px;
 }
 
@@ -42,6 +42,7 @@
 .welcome-edit-profile {
     display: flex;
     align-items: center;
+    font-family: 'Poppins';
 }
 
 .welcome-edit-profile h1 {
@@ -181,7 +182,7 @@
 .team-info-container {
     height: 748px;
     margin-right: 70px;
-    margin-left: 205px;
+    margin-left: 170px;
 }
 
 .team-info-title {
@@ -206,7 +207,11 @@
 }
 
 .team-data-container {
+    height: 600px ;
     display: flex;
+    flex-flow: column nowrap;
+    margin-right: ;
+    overflow-y: scroll;
 }
 
 .team-data {
@@ -215,15 +220,19 @@
     height: 337px;
     background-color: #F2F2F2;
     border-radius: 15px;
+    margin-bottom: 20px;
+
+
 }
 
 
 .poke-info {
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
     margin-left: 36px;
     margin-top: 23px;
-    margin-right: 54.19px;
+    margin-right: 40px;
 }
 
 .poke-info img {
@@ -240,6 +249,61 @@
     margin: 0px;
 }
 
+.poke-info span{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+}
 .poke-data table {
     flex-grow: 2;
 }
+
+
+
+.poke-data{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+}
+
+.poke-data-info{
+    font-family:'Poppins' ;
+    font-size: 18px;
+    font-weight: 400;
+    width: 190px;
+    gap: 0px 30px;
+}
+
+.poke-data-list{
+    display: flex;
+    flex-flow: row nowrap ;
+    margin-top: 15px;
+}
+.poke-data-barra-t{
+    display: flex;
+    align-items: center;
+    height: 13px;
+    width: 180px;
+    border: 2px #F0F0F3 solid;
+    border-radius: 40px;
+    box-shadow: 2px 2px 4px -1px #DCDCE3;
+}
+
+.poke-data-barra-t1{
+    height: 13px;
+    width: 180px;
+    border-radius: 40px;
+    box-shadow: inset 1px 1px 1px 0px #E6E6E8, inset 0px 0px 1px 1px white;
+    background-color: #F2F2F2;
+}
+
+.poke-data-barra-green{
+    height: 11px;
+    width: 40%;
+    border: 1px solid #7ED876;
+    border-radius: 40px;
+    background-color: #7ED876;
+    box-shadow: 0px 0px 2px 1px #C8CFDD;
+}
+

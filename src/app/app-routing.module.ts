@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'equipo', component: PokeseleccionComponent},
+  { path: 'profile', component: ProfileComponent},
 ];
 
 @NgModule({
