@@ -4,7 +4,7 @@
         <div class="welcome-edit-profile">
             <h1>¡Hola {{user}}!</h1>
             <div>
-                <button class="btn-edit">
+                <button (click)="edit('profile')" class="btn-edit">
                     <object data="./assets/edit_24px.svg" type=""></object>
                     Editar perfil
                 </button>
@@ -45,18 +45,18 @@
             <div class="team-info-title">
                 <p>Mis Pokémon</p>
                 <div>
-                    <button class="btn-edit">
+                    <button (click)="edit('team')" class="btn-edit">
                         <object data="./assets/edit_24px.svg" type=""></object>
                         Editar
                     </button>
                 </div>
             </div>
             <div class="team-data-container">
-                <div class="team-data">
+                <div *ngFor="let poke of pokes" class="team-data">
                     <div class="poke-info">
-                        <img src="./assets/bulba.png" alt="">
+                        <img src="{{poke.characteristics.image}}" alt="">
                         <div class="poke-info-text">
-                            <p>Bulbasour</p>
+                            <p>{{poke.name}}</p>
                             <span>Planta/Veneno</span> 
                         </div>
                     </div>
@@ -68,9 +68,7 @@
                             <div class="poke-data-barra">
                                 <div class="poke-data-barra-t">
                                     <div class="poke-data-barra-t1"> 
-                                        <div class="poke-data-barra-green">
-                                            
-                                        </div>
+                                        <div [appBarwidth]="poke.characteristics.HP" class="poke-data-barra-green"></div>
                                     </div>
                                 </div>
                             </div>
@@ -82,9 +80,7 @@
                             <div class="poke-data-barra">
                                 <div class="poke-data-barra-t">
                                     <div class="poke-data-barra-t1"> 
-                                        <div class="poke-data-barra-green">
-                                            
-                                        </div>
+                                        <div [appBarwidth]="poke.characteristics.attack" class="poke-data-barra-green"></div>
                                     </div>
                                 </div>
                             </div>
@@ -96,9 +92,7 @@
                             <div class="poke-data-barra">
                                 <div class="poke-data-barra-t">
                                     <div class="poke-data-barra-t1"> 
-                                        <div class="poke-data-barra-green">
-                                            
-                                        </div>
+                                        <div [appBarwidth]="poke.characteristics.defense" class="poke-data-barra-green"></div>
                                     </div>
                                 </div>
                             </div>
@@ -110,9 +104,7 @@
                             <div class="poke-data-barra">
                                 <div class="poke-data-barra-t">
                                     <div class="poke-data-barra-t1"> 
-                                        <div class="poke-data-barra-green">
-                                            
-                                        </div>
+                                        <div [appBarwidth]="poke.characteristics.specialAttack" class="poke-data-barra-green"></div>
                                     </div>
                                 </div>
                             </div>
@@ -124,9 +116,7 @@
                             <div class="poke-data-barra">
                                 <div class="poke-data-barra-t">
                                     <div class="poke-data-barra-t1"> 
-                                        <div class="poke-data-barra-green">
-                                            
-                                        </div>
+                                        <div [appBarwidth]="poke.characteristics.specialDefense" class="poke-data-barra-green"></div>
                                     </div>
                                 </div>
                             </div>
@@ -138,8 +128,7 @@
                             <div class="poke-data-barra">
                                 <div class="poke-data-barra-t">
                                     <div class="poke-data-barra-t1"> 
-                                        <div class="poke-data-barra-green">   
-                                        </div>
+                                        <div [appBarwidth]="poke.characteristics.velocity" class="poke-data-barra-green"></div>
                                     </div>
                                 </div>
                             </div>

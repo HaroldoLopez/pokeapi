@@ -210,7 +210,7 @@
     height: 600px ;
     display: flex;
     flex-flow: column nowrap;
-    margin-right: ;
+    /* margin-right: ; */
     overflow-y: scroll;
 }
 

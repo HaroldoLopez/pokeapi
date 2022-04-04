@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 import { CommunicationService } from '../services/communication/communication.service';
-import { Characteristics, Poke, PokeList } from '../services/poke/Poke';
+import { Characteristics, Poke, PokeList } from '../services/poke/Poke.model';
 import { PokeService } from '../services/poke/poke.service';
 
 @Component({
@@ -12,10 +12,10 @@ export class PokeseleccionComponent implements OnInit {
 
   enableSave:Boolean=false
   pokemonsRepo:Poke[] = []
-  pokemons:any[] = []
+  pokemons:Poke[] = []
 
   @Output() changeViewEvent = new EventEmitter<String>();
-  @Output() sendDataEvent = new EventEmitter<String>();
+  @Output() sendPokesEvent = new EventEmitter<Poke[]>();
 
   @Input() pasatiempo:String = ""
   @Input() edad:String = ""
@@ -63,11 +63,8 @@ export class PokeseleccionComponent implements OnInit {
     console.log(pokeSelected);
 
     if(event.target.parentNode.children[1].classList[1] == undefined &&  pokeSelected < 3) {
-      const pokeTmp = this.pokemonsRepo.find(p => p.id == poke)
-      this.pokemons = [...this.pokemons,{
-        "id":""+pokeTmp?.id,
-        "name":pokeTmp?.name
-      }]
+      const pokeTmp:Poke = this.pokemonsRepo.find(p => p.id == poke) ?? new Poke()
+      this.pokemons = [...this.pokemons, pokeTmp]
       event.target.parentNode.children[1].classList.add("poke-active")
     } else if(pokeSelected <= 3) {
       this.pokemons = this.pokemons.filter(p => p.id != poke)
@@ -113,6 +110,7 @@ export class PokeseleccionComponent implements OnInit {
     if(this.enableSave){
       console.log("go to home");
       this.changeViewEvent.emit('home');
+      this.sendPokesEvent.emit(this.pokemons)
     }
   }
 

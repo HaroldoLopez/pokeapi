@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataInfo } from '../profile/dataInfo.model';
 import { CommunicationService } from '../services/communication/communication.service';
+import { Poke } from '../services/poke/Poke.model';
 
 @Component({
   selector: 'app-process',
@@ -14,6 +15,7 @@ export class ProcessComponent implements OnInit {
   pasatiempo:String=""
   edad:String=""
   documento:String=""
+  pokes: Poke[] = []
 
   constructor() { }
 
@@ -32,8 +34,8 @@ export class ProcessComponent implements OnInit {
 
   }
 
-  getDataTeam(data:any) {
-    
+  sendPokesEvent(pokes:Poke[]) {
+    this.pokes = pokes    
   }
 
 }

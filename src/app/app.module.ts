@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ProcessComponent } from './process/process.component';
+import { BarwidthDirective } from './directives/barwidth.directive';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ProcessComponent } from './process/process.component';
     NavbarComponent,
     RegistroComponent,
     ProcessComponent,
+    BarwidthDirective,
   ],
   imports: [
     BrowserModule,

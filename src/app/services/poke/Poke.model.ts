@@ -7,7 +7,7 @@ export class Characteristics {
     velocity: String;
     image: String;
 
-    constructor(HP:string, attack:string, defense:string, specialAttack:string, specialDefense:string, velocity:string, image:string){
+    constructor(HP:String="", attack:String="", defense:String="", specialAttack:String="", specialDefense:String="", velocity:String="", image:String=""){
         this.HP = HP;
         this.attack = attack;
         this.defense = defense;
@@ -30,7 +30,7 @@ export class Poke {
 
     characteristics:Characteristics;
 
-    constructor(id:String="", name:String="", characteristics: Characteristics) {
+    constructor(id:String="", name:String="", characteristics: Characteristics=new Characteristics()) {
         this.id = id;
         this.name = name;
         this.characteristics = characteristics

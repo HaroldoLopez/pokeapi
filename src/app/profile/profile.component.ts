@@ -13,12 +13,12 @@ import { DataInfo } from './dataInfo.model';
 export class ProfileComponent implements OnInit {
 
   hobbiesRepo : any[] = [
-    { 'value': 'opcion', 'option': 'opcion'},
-    { 'value': 'otro 2', 'option': 'opcion 2'},
-    { 'value': 'valor 3', 'option': 'opcion 3'},
-    { 'value': 'radio 4', 'option': 'opcion 4'},
-    { 'value': 'raton 5', 'option': 'opcion 5'},
-    { 'value': 'pared 6', 'option': 'opcion 6'},
+    { 'value': 'Ver TV', 'option': 'Ver TV'},
+    { 'value': 'Ejercicio', 'option': 'Ejercicio'},
+    { 'value': 'Correr', 'option': 'Correr'},
+    { 'value': 'Monedas', 'option': 'Monedas'},
+    { 'value': 'Pintar', 'option': 'Pintar'},
+    { 'value': 'Manejar', 'option': 'Manejar'},
   ]
 
   infoForm: FormGroup;

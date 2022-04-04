@@ -8,7 +8,7 @@
         [edad]="edad"
         [documento]="documento"
         (changeViewEvent)="changeViewEvent($event)"
-        (sendDataEvent)="getDataTeam($event)"
+        (sendPokesEvent)="sendPokesEvent($event)"
     ></app-pokeseleccion>
     <app-profile 
         *ngSwitchCase="'profile'"
@@ -17,10 +17,12 @@
     ></app-profile>
     <app-home 
         *ngSwitchCase="'home'"
+        (changeViewEvent)="changeViewEvent($event)"
         [pasatiempo]="pasatiempo"
         [edad]="edad"
         [documento]="documento"
         [user]="user"
+        [pokes]="pokes"
     ></app-home>
 
 </div>
